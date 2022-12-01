@@ -1,21 +1,21 @@
 variable "region" {
-    type = string
-    default = "ams3"
+  type    = string
+  default = "ams3"
 }
 
 variable "node_count" {
-  type = number
+  type    = number
   default = 3
 }
 
 variable "node_size" {
-    type = string
-    default = "s-1vcpu-2gb"
+  type    = string
+  default = "s-1vcpu-2gb"
 }
 
 variable "kubernetes_version" {
-    type = string
-    default = "1.24.4-do.0"
+  type    = string
+  default = "1.24.4-do.0"
 }
 
 resource "digitalocean_kubernetes_cluster" "foo" {
