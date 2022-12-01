@@ -5,7 +5,7 @@ variable "region" {
 
 variable "node_count" {
   type = number
-  default = 1
+  default = 3
 }
 
 variable "node_size" {
@@ -28,11 +28,5 @@ resource "digitalocean_kubernetes_cluster" "foo" {
     name       = "worker-pool-${var.region}"
     size       = var.node_size
     node_count = var.node_count
-
-    taint {
-      key    = "workloadKind"
-      value  = "database"
-      effect = "NoSchedule"
-    }
   }
 }
