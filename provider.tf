@@ -1,4 +1,11 @@
 terraform {
+  cloud {
+    organization = "f2js"
+
+    workspaces {
+      name = "f2js-exam-workspace"
+    }
+  }
   required_providers {
     digitalocean = {
       source  = "digitalocean/digitalocean"
@@ -20,14 +27,4 @@ data "digitalocean_account" "account_info" {
 
 output "droplet_limit" {
   value = data.digitalocean_account.account_info.droplet_limit
-}
-
-terraform {
-  cloud {
-    organization = "f2js"
-
-    workspaces {
-      name = "f2js-exam-workspace"
-    }
-  }
 }
